@@ -16,7 +16,7 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService() {
-        System.out.println("casll AppConfig.memberService");
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
