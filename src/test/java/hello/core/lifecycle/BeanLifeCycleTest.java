@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.web.reactive.context.AnnotationConfigReactiveWebApplicationContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,9 +12,7 @@ public class BeanLifeCycleTest {
 
     @Test
     public void lifeCycleTest() {
-        ConfigurableApplicationContext ac = new AnnotationConfigReactiveWebApplicationContext(LifeCycleConfig.class);
-        NetworkClient client = ac.getBean(NetworkClient.class);
-        ac.close();
+        ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
     }
 
     @Configuration
